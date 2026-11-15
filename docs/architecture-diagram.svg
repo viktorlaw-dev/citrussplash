@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#2B2B2B"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1280" height="800" fill="#FBF7F0"/>
+
+  <!-- logo mark -->
+  <g transform="translate(70,42)">
+    <circle r="18" fill="#F5821F" stroke="#2B2B2B" stroke-width="3"/>
+    <circle r="11" fill="#FFE3B8"/>
+    <g stroke="#F5821F" stroke-width="3" stroke-linecap="round">
+      <line x1="0" y1="-9" x2="0" y2="9"/>
+      <line x1="-8" y1="-4" x2="8" y2="4"/>
+      <line x1="-8" y1="4" x2="8" y2="-4"/>
+    </g>
+  </g>
+  <text x="100" y="52" font-size="26" font-weight="700" fill="#2B2B2B">CitrusSplash &amp; Restaurant — System Diagram</text>
+  <text x="100" y="78" font-size="15" fill="#6B6156">guest ordering · Laravel backend · bank-transfer v1 · staff 2FA · GitHub-first</text>
+
+  <!-- CUSTOMER card -->
+  <rect x="70" y="130" width="210" height="110" rx="18" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="3"/>
+  <text x="175" y="172" font-size="26" text-anchor="middle">📱</text>
+  <text x="175" y="200" font-size="20" font-weight="700" fill="#2B2B2B" text-anchor="middle">CUSTOMER</text>
+  <text x="175" y="222" font-size="13" fill="#6B6156" text-anchor="middle">guest · no login · mobile-first</text>
+
+  <!-- STAFF card -->
+  <rect x="1000" y="130" width="210" height="110" rx="18" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="3"/>
+  <text x="1105" y="172" font-size="26" text-anchor="middle">👩‍🍳</text>
+  <text x="1105" y="200" font-size="20" font-weight="700" fill="#2B2B2B" text-anchor="middle">STAFF</text>
+  <text x="1105" y="222" font-size="13" fill="#6B6156" text-anchor="middle">password + 2FA code</text>
+
+  <!-- LARAVEL APP big box -->
+  <rect x="430" y="110" width="420" height="300" rx="22" fill="#FFF3E4" stroke="#F5821F" stroke-width="4"/>
+  <text x="640" y="146" font-size="22" font-weight="700" fill="#2B2B2B" text-anchor="middle">LARAVEL APP</text>
+
+  <!-- inner box: PAGES -->
+  <rect x="452" y="168" width="120" height="72" rx="12" fill="#FFFDF9" stroke="#2B2B2B" stroke-width="2"/>
+  <text x="512" y="198" font-size="15" font-weight="700" fill="#2B2B2B" text-anchor="middle">PAGES</text>
+  <text x="512" y="218" font-size="11" fill="#6B6156" text-anchor="middle">menu · checkout</text>
+  <text x="512" y="232" font-size="11" fill="#6B6156" text-anchor="middle">tracker</text>
+
+  <!-- inner box: ORDERS API -->
+  <rect x="580" y="168" width="120" height="72" rx="12" fill="#FFFDF9" stroke="#2B2B2B" stroke-width="2"/>
+  <text x="640" y="198" font-size="15" font-weight="700" fill="#2B2B2B" text-anchor="middle">ORDERS API</text>
+  <text x="640" y="218" font-size="11" fill="#6B6156" text-anchor="middle">CS-xxxx</text>
+  <text x="640" y="232" font-size="11" fill="#6B6156" text-anchor="middle">re-prices</text>
+
+  <!-- inner box: ADMIN -->
+  <rect x="708" y="168" width="120" height="72" rx="12" fill="#FFFDF9" stroke="#2B2B2B" stroke-width="2"/>
+  <text x="768" y="198" font-size="15" font-weight="700" fill="#2B2B2B" text-anchor="middle">ADMIN</text>
+  <text x="768" y="218" font-size="11" fill="#6B6156" text-anchor="middle">orders</text>
+  <text x="768" y="232" font-size="11" fill="#6B6156" text-anchor="middle">settings</text>
+
+  <!-- thin stack boxes -->
+  <rect x="452" y="258" width="376" height="38" rx="10" fill="#FFFDF9" stroke="#2B2B2B" stroke-width="2"/>
+  <text x="640" y="282" font-size="13" fill="#2B2B2B" text-anchor="middle">Blade templates · SASS · vanilla JS</text>
+  <rect x="452" y="306" width="376" height="38" rx="10" fill="#FFFDF9" stroke="#2B2B2B" stroke-width="2"/>
+  <text x="640" y="330" font-size="13" fill="#2B2B2B" text-anchor="middle">Scheduler: auto-cancel unpaid after 60 min</text>
+
+  <!-- GITHUB box -->
+  <rect x="1000" y="430" width="210" height="90" rx="18" fill="#FFFFFF" stroke="#4C9A2A" stroke-width="3"/>
+  <text x="1105" y="468" font-size="20" font-weight="700" fill="#2B2B2B" text-anchor="middle">GITHUB</text>
+  <text x="1105" y="492" font-size="13" fill="#6B6156" text-anchor="middle">code backup</text>
+  <text x="1105" y="510" font-size="13" fill="#6B6156" text-anchor="middle">every commit pushed</text>
+
+  <!-- DATABASE cylinder -->
+  <g>
+    <path d="M510 575 a130 22 0 0 1 260 0 v80 a130 22 0 0 1 -260 0 z" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="3"/>
+    <ellipse cx="640" cy="575" rx="130" ry="22" fill="#FFF3E4" stroke="#2B2B2B" stroke-width="3"/>
+    <text x="640" y="632" font-size="20" font-weight="700" fill="#2B2B2B" text-anchor="middle">DATABASE</text>
+    <text x="640" y="654" font-size="13" fill="#6B6156" text-anchor="middle">SQLite now → MySQL later</text>
+  </g>
+
+  <!-- arrows -->
+  <line x1="285" y1="188" x2="446" y2="198" stroke="#2B2B2B" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="360" y="172" font-size="13" fill="#6B6156" text-anchor="middle">browse &amp; order</text>
+
+  <line x1="995" y1="188" x2="834" y2="198" stroke="#2B2B2B" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="915" y="172" font-size="13" fill="#6B6156" text-anchor="middle">confirm · track</text>
+
+  <line x1="855" y1="300" x2="994" y2="462" stroke="#2B2B2B" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="912" y="372" font-size="13" fill="#6B6156" text-anchor="middle">push</text>
+
+  <line x1="480" y1="415" x2="556" y2="568" stroke="#2B2B2B" stroke-width="2.5" marker-end="url(#arw)"/>
+  <line x1="640" y1="415" x2="640" y2="549" stroke="#2B2B2B" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="662" y="490" font-size="12" fill="#6B6156">Eloquent</text>
+  <line x1="800" y1="415" x2="724" y2="568" stroke="#2B2B2B" stroke-width="2.5" marker-end="url(#arw)"/>
+
+  <!-- payment annotation -->
+  <rect x="70" y="560" width="300" height="92" rx="14" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2"/>
+  <text x="220" y="592" font-size="16" font-weight="700" fill="#2B2B2B" text-anchor="middle">💳 Bank transfer only</text>
+  <text x="220" y="616" font-size="12" fill="#6B6156" text-anchor="middle">narration = CS-xxxx</text>
+  <text x="220" y="634" font-size="12" fill="#6B6156" text-anchor="middle">staff confirms payment in admin</text>
+
+  <!-- whatsapp annotation -->
+  <rect x="910" y="560" width="300" height="92" rx="14" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2"/>
+  <text x="1060" y="592" font-size="16" font-weight="700" fill="#2B2B2B" text-anchor="middle">🧺 WhatsApp tap-to-send</text>
+  <text x="1060" y="616" font-size="12" fill="#6B6156" text-anchor="middle">"order ready" message pre-filled</text>
+  <text x="1060" y="634" font-size="12" fill="#6B6156" text-anchor="middle">staff taps send (no API needed)</text>
+
+  <!-- journey pill -->
+  <rect x="150" y="690" width="980" height="46" rx="23" fill="#FFF3E4" stroke="#F5821F" stroke-width="2"/>
+  <text x="640" y="719" font-size="15" font-weight="600" fill="#2B2B2B" text-anchor="middle">Order journey: browse → basket → guest checkout → CS-xxxx → bank transfer → staff confirms → live tracker (30 s)</text>
+</svg>
