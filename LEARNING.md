@@ -22,6 +22,10 @@ Rule S3: secrets never leave your PC.
 loading the camera, not pressing the shutter — nothing is saved until `git commit`.
 **`origin`** — git's conventional nickname for the repo's home address on GitHub
 (`git remote add origin <url>` teaches git where to push).
+**Token (PAT)** — GitHub no longer accepts account *passwords* for pushes. Identity is proven
+with a long random "personal access token". Git Credential Manager creates one automatically
+after the browser sign-in (that popup we completed) and stores it safely — future pushes
+happen silently.
 
 ## Coming up (explained when we reach them)
 
