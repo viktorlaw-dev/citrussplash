@@ -27,11 +27,25 @@ with a long random "personal access token". Git Credential Manager creates one a
 after the browser sign-in (that popup we completed) and stores it safely — future pushes
 happen silently.
 
+## Day 1 (continued) — the build tools
+
+**PHP** — the language Laravel is written in: the engine that runs the server. Ours lives in
+`C:\php` (v8.3.36), configured by `C:\php\php.ini`.
+**Extension** — a plug-in that gives PHP a skill. We enabled 9 in `php.ini`: `pdo_sqlite`
+(talk to the database), `mbstring` (text in any language), `openssl` (secure downloads),
+`curl` (fetch web resources), `gd` (images), `zip`, `intl`, `fileinfo`, `sqlite3`.
+**Composer** — PHP's package installer: downloads Laravel and all its parts from the internet
+into `vendor/`. That's why `vendor/` is gitignored — rebuilt any time with one command,
+never stored in git.
+**Node.js / npm** — the JavaScript runtime + its package installer. Later (Phase 4) npm
+compiles our Bootstrap/SASS into the final CSS the browser receives, via a tool called Vite.
+**PATH** — Windows' list of folders to search when you type a command. If `php -v` says
+"not recognized", the php folder isn't on the PATH. Gotcha: after changing the PATH, only
+*newly opened* terminals see the change — old windows keep the old list.
+
 ## Coming up (explained when we reach them)
 
-**PHP / Composer / Node.js / npm** — the backend language; the PHP package installer; the
-JavaScript runtime; its package installer. *(Day 1–2)*
-**Laravel** — the PHP framework: pre-built, secure plumbing for web apps. *(Day 2)*
+**Laravel** — the PHP framework: pre-built, secure plumbing for web apps. *(next, today)*
 **Artisan** — Laravel's command-line helper (`php artisan …`). *(Day 2)*
 **Route / Controller / Blade / SASS / Migration / Eloquent / Middleware** — *(explained in order,
 Days 2–5; each gets its entry here the day we meet it)*
