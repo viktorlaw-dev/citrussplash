@@ -1,0 +1,64 @@
+/* ============================================================
+   CitrusSplash — base: reset, body texture, container, buttons,
+   pills and fields shared by every page.
+   Ported 1:1 from the prototype (rules F7/F8).
+   ============================================================ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--font-body);
+  background:var(--cream);
+  color:var(--ink);
+  font-size:1rem;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* subtle paper grain + citrus dot texture */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  z-index:1;
+  opacity:.5;
+  background-image:radial-gradient(rgba(245,130,31,.10) 1.2px, transparent 1.3px);
+  background-size:22px 22px;
+  mask-image:linear-gradient(to bottom, black 0%, transparent 55%);
+}
+::selection{background:var(--yellow); color:var(--ink)}
+img{max-width:100%; display:block}
+a{color:inherit}
+button{font:inherit}
+
+.container{width:min(var(--max), 100% - 32px); margin-inline:auto}
+section{position:relative; z-index:2}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:44px; padding:12px 22px;
+  border-radius:var(--r-sm);
+  font-weight:600; font-size:.98rem; text-decoration:none;
+  border:2px solid transparent;
+  cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:translate(2px,2px); box-shadow:0 0 0 var(--ink)!important}
+.btn-primary{background:var(--orange); color:var(--paper); box-shadow:var(--shadow-pop); border-color:var(--ink)}
+.btn-primary:hover{background:var(--orange-deep); transform:translate(-1px,-1px); box-shadow:5px 5px 0 var(--ink)}
+.btn-secondary{background:var(--paper); color:var(--ink); border-color:var(--ink); box-shadow:var(--shadow-pop)}
+.btn-secondary:hover{background:var(--yellow-soft); transform:translate(-1px,-1px); box-shadow:5px 5px 0 var(--ink)}
+.btn-green{background:var(--green); color:var(--paper); border-color:var(--ink); box-shadow:var(--shadow-pop)}
+.btn-ghost{background:transparent; border-color:var(--line); box-shadow:none; color:var(--ink)}
+.btn-block{width:100%}
+.btn-lg{min-height:58px; font-size:1.08rem; padding:16px 28px; border-radius:14px}
+
+/* ---------- pills (little status chips) ---------- */
+.pill{
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:.83rem; font-weight:600;
+  background:var(--paper); border:1.5px solid var(--ink); border-radius:var(--r-pill); padding:7px 12px;
+}
+.pill i{width:9px; height:9px; border-radius:50%; display:inline-block}
+.pill .g{background:var(--green)} .pill .o{background:var(--orange)} .pill .y{background:var(--yellow)}

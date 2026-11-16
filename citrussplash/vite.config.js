@@ -1,20 +1,15 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import { bunny } from 'laravel-vite-plugin/fonts';
-import tailwindcss from '@tailwindcss/vite';
 
+// Vite = the bundler: it compiles our SASS into one small CSS file and our
+// JS into one small JS file, then tells Blade how to load them (@vite).
+// (Tailwind was removed — rule F1: no CSS frameworks. We ship our own SASS.)
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: ['resources/sass/style.scss', 'resources/js/app.js'],
             refresh: true,
-            fonts: [
-                bunny('Instrument Sans', {
-                    weights: [400, 500, 600],
-                }),
-            ],
         }),
-        tailwindcss(),
     ],
     server: {
         watch: {

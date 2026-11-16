@@ -1,0 +1,60 @@
+/* ============================================================
+   CitrusSplash — design tokens (the single source of visual truth)
+   Every color, shadow, radius and font lives HERE and only here
+   (DBD rule #2). Values are ported 1:1 from the approved prototype.
+   ============================================================ */
+:root{
+  /* brand palette (from the logo) */
+  --orange:#F5821F;
+  --orange-deep:#D96A0B;
+  --orange-soft:#FFF0DE;
+  --green:#4C9A2A;
+  --green-deep:#35701C;
+  --green-soft:#E9F5E0;
+  --yellow:#FFC72C;
+  --yellow-soft:#FFF6D6;
+  --ink:#2B2B2B;
+  --black:#000;
+  --muted:#6B6B6B;
+  --cream:#FFFBF5;
+  --paper:#FFFFFF;
+  --line:#EAE4DA;
+  --red:#D64545;
+
+  /* dark-footer text tones */
+  --cream-text:#FFF3E2;
+  --sand-text:#CBBFAE;
+
+  /* category / card-visual gradient tints (exact prototype stops) */
+  --tint-sand-1:#FFF3D6;  --tint-sand-2:#FFD98A;
+  --tint-juice-1:#EAF7DF; --tint-juice-2:#B9E39A;
+  --tint-salad-1:#FFF9EA; --tint-salad-2:#FFE9A8; --tint-salad-3:#8FD06A;
+  --visual-sand-1:#FFF8E8; --visual-sand-2:#FFE3B3; --visual-sand-3:#FFC98A;
+  --visual-juice-2:#DFF2CC; --visual-juice-3:#A9DD86;
+  --visual-salad-2:#E4EFCB; --visual-salad-3:#9BD47E;
+  --line-sand-bg:#FFF0D2;
+  --line-juice-bg:#E8F5DB;
+  --line-salad-bg:#EAF3D9;
+  --stage-1-bg:#FFF1C4;
+  --ig-grad-1:#FFF3D6; --ig-grad-2:#FFD9A8;
+
+  /* elevation */
+  --shadow-sm:0 2px 8px rgba(0,0,0,.06);
+  --shadow-md:0 12px 32px rgba(245,130,31,.18);
+  --shadow-pop:4px 4px 0 #2B2B2B;
+
+  /* radii */
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:20px;
+  --r-pill:999px;
+
+  /* type */
+  --font-display:"Baloo 2",system-ui,sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,sans-serif;
+
+  /* spacing scale + layout */
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px;
+  --head-h:68px;
+  --max:1160px;
+}

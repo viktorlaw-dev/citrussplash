@@ -1,0 +1,54 @@
+/* ============================================================
+   CitrusSplash — cart drawer: scrim, sliding basket (bottom
+   sheet on mobile, side panel on desktop), line items, steppers.
+   Ported 1:1 from the prototype.
+   ============================================================ */
+.scrim{
+  position:fixed; inset:0; background:rgba(43,43,43,.48);
+  opacity:0; pointer-events:none; transition:opacity .22s ease; z-index:90;
+}
+.scrim.show{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:99; background:var(--cream);
+  display:flex; flex-direction:column;
+  transition:transform .28s cubic-bezier(.32,.72,.28,1);
+  border:2px solid var(--ink);
+}
+@media (max-width:767px){
+  .drawer{left:0; right:0; bottom:0; top:auto; max-height:88vh; border-radius:20px 20px 0 0; border-bottom:0; transform:translateY(105%)}
+  .drawer.open{transform:translateY(0)}
+}
+@media (min-width:768px){
+  .drawer{top:0; right:0; bottom:0; width:400px; border-right:0; border-top:0; border-bottom:0; transform:translateX(105%)}
+  .drawer.open{transform:translateX(0)}
+}
+.drawer-head{
+  padding:18px 18px 14px; background:var(--paper); border-bottom:2px solid var(--ink);
+  display:flex; align-items:center; gap:12px;
+  border-radius:inherit;
+}
+.drawer-head h2{font-size:1.25rem}
+.drawer-head small{display:block; font-family:var(--font-body); font-size:.8rem; font-weight:500; color:var(--muted)}
+.close-x{margin-left:auto; width:44px; height:44px; border-radius:12px; border:2px solid var(--ink); background:var(--yellow); font-weight:800; cursor:pointer}
+.drawer-items{padding:14px; display:flex; flex-direction:column; gap:10px; overflow:auto; flex:1}
+.empty{
+  text-align:center; padding:28px 18px; background:var(--paper); border:1.5px dashed var(--line); border-radius:14px; color:var(--muted);
+}
+.empty .big{font-size:2.6rem}
+.line-item{
+  display:flex; gap:12px; background:var(--paper); border:1px solid var(--line);
+  border-radius:12px; padding:12px; box-shadow:var(--shadow-sm); align-items:center;
+}
+.line-emoji{width:48px; height:48px; flex:0 0 48px; border-radius:12px; display:grid; place-items:center; font-size:1.5rem; border:1.5px solid var(--ink)}
+.line-emoji.sand{background:var(--line-sand-bg)} .line-emoji.juice{background:var(--line-juice-bg)}
+.line-info{flex:1; min-width:0}
+.line-info strong{display:block; font-size:.94rem; line-height:1.2}
+.line-info span{font-size:.83rem; color:var(--muted); font-weight:600}
+.stepper{display:flex; align-items:center; gap:8px}
+.stepper button{width:36px; height:36px; border-radius:10px; border:2px solid var(--ink); background:var(--paper); font-weight:800; font-size:1.05rem; cursor:pointer; line-height:1}
+.stepper button:hover{background:var(--yellow-soft)}
+.stepper b{min-width:20px; text-align:center}
+.drawer-foot{background:var(--paper); border-top:2px solid var(--ink); padding:16px 16px 18px}
+.tot-row{display:flex; justify-content:space-between; font-size:.92rem; font-weight:500; color:var(--muted); padding:3px 0}
+.tot-row.grand{font-size:1.08rem; font-weight:800; color:var(--ink); border-top:1.5px dashed var(--line); margin-top:8px; padding-top:10px}
+.fee-note{background:var(--yellow-soft); border:1.5px solid var(--ink); border-radius:10px; padding:9px 12px; font-size:.83rem; font-weight:600; margin:10px 0}

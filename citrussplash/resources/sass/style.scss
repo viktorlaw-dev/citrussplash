@@ -1,0 +1,17 @@
+/* ============================================================
+   CitrusSplash — SASS entry point.
+   One import list = the whole design system, assembled in the
+   exact cascade order the prototype's style.css had.
+   Vite compiles this file (plus the JS entry) on every build.
+   ============================================================ */
+@use 'variables';   // design tokens (:root)
+@use 'base';        // reset, body, container, buttons, pills
+@use 'typography';  // type scale + eyebrow chip
+@use 'header';      // site header, navs, cart button
+@use 'hero';        // hero, orange scene, marquee
+@use 'home';        // blocks, categories, cards, steps, about
+@use 'menu';        // menu page: tabs, cards, search, cart bar
+@use 'drawer';      // cart drawer + scrim
+@use 'footer';      // footer wave + links
+@use 'toast';       // toast, reveal, focus, reduced-motion
+@use 'mixins';      // depth layer (tilt + parallax) — last, like the prototype

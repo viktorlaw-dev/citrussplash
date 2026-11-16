@@ -1,0 +1,33 @@
+/* ============================================================
+   CitrusSplash — depth layer (cross-cutting, so it gets its own
+   partial): pointer tilt on cards + parallax hooks.
+   Colours, type and layout are untouched: depth and motion only.
+   Runs on precise pointers only, never under reduced motion.
+   Ported 1:1 from the prototype (the reduced-motion gap flagged
+   in DBD §5 is already closed in the current prototype).
+   ============================================================ */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  [data-tilt]{
+    --rx:0deg; --ry:0deg; --ty:0px;
+    transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--ty));
+    transform-style:preserve-3d;
+    transition:transform .35s cubic-bezier(.32,.72,.28,1), box-shadow .25s ease;
+    will-change:transform;
+  }
+  [data-tilt]:hover{--ty:-4px}
+  [data-tilt]:active{--ty:0px}
+
+  /* keep the scroll-reveal entrance on tilted cards */
+  [data-tilt].reveal{
+    transform:perspective(900px) translateY(18px) rotateX(var(--rx)) rotateY(var(--ry));
+  }
+  [data-tilt].reveal.in{
+    transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--ty));
+  }
+
+  /* menu cards animate in; let the transform property take over afterwards */
+  .card.enter{animation-fill-mode:backwards}
+}
+
+/* parallax layers: JS writes the translate value, transforms stay intact */
+.hero-art,.dish-coin,.sticker,.price-tag{will-change:translate}

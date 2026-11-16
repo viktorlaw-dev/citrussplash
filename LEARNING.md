@@ -37,8 +37,8 @@ happen silently.
 **Composer** — PHP's package installer: downloads Laravel and all its parts from the internet
 into `vendor/`. That's why `vendor/` is gitignored — rebuilt any time with one command,
 never stored in git.
-**Node.js / npm** — the JavaScript runtime + its package installer. Later (Phase 4) npm
-compiles our Bootstrap/SASS into the final CSS the browser receives, via a tool called Vite.
+**Node.js / npm** — the JavaScript runtime + its package installer. In Phase 4 npm
+compiles our SASS and JavaScript into the final files the browser receives, via a tool called Vite.
 **PATH** — Windows' list of folders to search when you type a command. If `php -v` says
 "not recognized", the php folder isn't on the PATH. Gotcha: after changing the PATH, only
 *newly opened* terminals see the change — old windows keep the old list.
@@ -70,7 +70,34 @@ settings). `php artisan migrate:fresh --seed` = tear down, rebuild, and fill eve
 menu, so an old order always shows exactly what the customer paid.
 **Tinker** — Laravel's interactive PHP playground in the terminal — perfect for peeking at data.
 
+## Day 3 — The pages come alive (Blade + SASS)
+
+**Route** — the map from a URL to code: "GET / → the home page method". Lives in
+`routes/web.php`. Routes get **names** (`->name('home')`) so views can link with
+`route('menu')` instead of typing `/menu` — rename-proof links.
+**Controller** — a PHP class holding the code behind pages. `PageController::home()` asks
+the database (models) for data, then hands it to a view. Keeps routes file thin.
+**View / Blade** — an HTML template that can embed live values: `{{ $item->name }}` prints
+escaped (safe) text, `@foreach` loops rows into HTML. Blade files end in `.blade.php`.
+**Blade directive** — the `@`-commands: `@if`, `@foreach`, `@extends`… Gotcha learned
+today: `@` must not touch a word character (`Home@endif` is NOT a directive — that
+bug bit us and taught us Blade's rule).
+**Layout & partials** — `layouts/app.blade.php` holds head + header + nav + footer +
+basket drawer + toast **once**; each page `@extends` it and fills its `@section('content')`.
+`@include` drops a shared chunk (e.g. the header partial) in place. This kills the
+copy-paste-every-page problem (rule F2).
+**SASS** — CSS with superpowers: variables, nesting, and **partials** (`_header.scss`)
+that assemble into one file via `style.scss`'s `@use` list. All colors live ONLY in
+`_variables.scss` (tokens) — change `--orange` there, the whole site updates.
+**Compile / bundler** — the SASS + JS you write aren't what the browser gets. **Vite**
+compiles them into one small CSS + one small JS in `public/build/`. `npm run dev` = watch
+mode (instant, for building); `npm run build` = production compile (fast, for shipping).
+**asset()** — builds a correct URL to a file in `public/` — how our food photos load.
+**Pint** — Laravel's auto-formatter enforcing PSR-12 code style (`php vendor/bin/pint`).
+**Endpoint** — one URL that returns data (here: `/js/menu-data.js` returns your 64 items
+as JavaScript, same shape the prototype had — so page scripts notice nothing).
+
 ## Coming up (explained when we reach them)
 
-**Route / Controller / Blade / SASS / Middleware** — *(Days 3–5, each gets its entry the day
+**Middleware / FormRequest / API / fetch** — *(Days 4–6, each gets its entry the day
 we meet it)*
