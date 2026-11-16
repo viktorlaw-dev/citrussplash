@@ -43,9 +43,34 @@ compiles our Bootstrap/SASS into the final CSS the browser receives, via a tool 
 "not recognized", the php folder isn't on the PATH. Gotcha: after changing the PATH, only
 *newly opened* terminals see the change — old windows keep the old list.
 
+## Day 2 — The database
+
+**Laravel** — the PHP framework: pre-built, secure plumbing for web apps (routing, database,
+validation, sessions — wired and battle-tested, so we build the restaurant, not the plumbing).
+**Artisan** — Laravel's command-line helper: `php artisan migrate`, `php artisan serve`, …
+**Migration** — a PHP file that creates or changes one table's structure, in repeatable steps.
+`php artisan migrate` runs pending ones; the filename timestamp decides the run order.
+**Table** — one grid of related data. `menu_items` is 64 rows with identical columns — a very
+tidy spreadsheet.
+**Column types we used** — `string` (short text) · `text` (long text) · `integer` (whole
+numbers — ALL money, in naira, never decimals) · `boolean` (true/false) · `enum` (value from
+a fixed list — status can only ever be one of 7 words) · `nullable` (may be empty) ·
+`default` (value filled in automatically when none given).
+**Foreign key (FK)** — a column pointing at another table's row: `menu_items.category_id`
+→ `categories.id` is the link behind "49 items belong to Smoothies".
+**Index** — a lookup accelerator the database maintains. We indexed what we search by:
+`phone` (tracker) · `status` (admin lists) · `payment_status + placed_at` (the 60-minute
+auto-cancel job).
+**Model / Eloquent** — a PHP class standing for one table row; you find and save data through
+it (`MenuItem::where('slug','abuja-tonic')->first()`). Eloquent = Laravel's name for this.
+**Relation** — how models connect: Category `hasMany` items · MenuItem `belongsTo` category.
+**Seeder** — a PHP file that fills tables with real starting data (our 64 menu items, 10
+settings). `php artisan migrate:fresh --seed` = tear down, rebuild, and fill everything.
+**Snapshot** — data copied and frozen at a moment: order lines copy name + price from the
+menu, so an old order always shows exactly what the customer paid.
+**Tinker** — Laravel's interactive PHP playground in the terminal — perfect for peeking at data.
+
 ## Coming up (explained when we reach them)
 
-**Laravel** — the PHP framework: pre-built, secure plumbing for web apps. *(next, today)*
-**Artisan** — Laravel's command-line helper (`php artisan …`). *(Day 2)*
-**Route / Controller / Blade / SASS / Migration / Eloquent / Middleware** — *(explained in order,
-Days 2–5; each gets its entry here the day we meet it)*
+**Route / Controller / Blade / SASS / Middleware** — *(Days 3–5, each gets its entry the day
+we meet it)*

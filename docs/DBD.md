@@ -113,6 +113,6 @@ resources/sass/
 ## 9. Imagery
 
 - Existing: `orange-ref.png` (hero), `smoothie.jpg`, `salad.jpg`, `club-sandwich.jpg` (dish coins)
-- All 86 menu items use **emoji visual tiles** in v1 (no per-item photos — v2 shelf)
+- All 64 menu items use **emoji visual tiles** in v1 (no per-item photos — v2 shelf)
 - `menu 1.jpg` / `menu 2.jpg` remain the transcription reference (in `design-reference/`)
 - `citrussplash.jpeg` stays as brand reference in `design-reference/`

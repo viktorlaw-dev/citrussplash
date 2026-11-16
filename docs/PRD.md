@@ -118,7 +118,7 @@ Explanations live in `LEARNING.md` + inline notes (deep teach-back scheduled aft
 | Day | Work | Owner's part |
 |---|---|---|
 | 1 | Phase 1 (git/GitHub/docs) + Phase 2 (installs, Laravel running) | Runs installs with agent |
-| 2 | Phase 3 — database + all 86 menu items seeded | Glance + 2 commands |
+| 2 | Phase 3 — database + all 64 menu items seeded | Glance + 2 commands |
 | 3–4 | Phase 4 — Blade + SASS conversion | Day 4: visual side-by-side check |
 | 5 | Phase 5 — order API complete | 5-min check |
 | 6 | Phase 6 — frontend wired, **first real order works** | Test incl. on phone |

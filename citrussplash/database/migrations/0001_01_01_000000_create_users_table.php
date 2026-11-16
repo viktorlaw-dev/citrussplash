@@ -11,12 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Staff accounts (BSD §users). Created ONLY via `php artisan staff:create`
+        // (Phase 7) — no registration route will ever exist for these.
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('email')->unique();                  // login handle
+            $table->timestamp('email_verified_at')->nullable(); // skeleton default, unused by us
+            $table->string('password');                         // bcrypt only (rule S4)
+            $table->enum('role', ['owner', 'staff'])->default('staff'); // owner sees audit log, manages staff
+            $table->text('totp_secret')->nullable();            // 2FA secret, encrypted at rest
+            $table->boolean('totp_enabled')->default(false);    // true after QR pairing
+            $table->dateTime('last_login_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
